@@ -26,6 +26,7 @@ u_int32_t const kMinValue = 1;
 {
     UIView *dragView = [super didBeginDrag:touches];
     
+    // TODO: replace with arc4random_uniform(u_int32_t upper_bound)
     self.value = (NSInteger)(arc4random() % (kMaxValue - kMinValue) + kMinValue);
     [self.delegate didSetValue:self.value];
     
@@ -46,6 +47,7 @@ u_int32_t const kMinValue = 1;
                          completion:^(BOOL finished) {[self.delegate didClearValue];}];
     }];
 }
+
 
 #pragma mark - Internal API
 
